@@ -16,8 +16,8 @@ function App() {
     setTasks(newTaskList)
   }
 
-  function deleteTask(taskToDelete){
-    const newTaskList = tasks.filter(task=>task.text!==taskToDelete.text)
+  function deleteTask(deletedTaskText){
+    const newTaskList = tasks.filter(task=>task.text!==deletedTaskText)
     setTasks(newTaskList)
   }
 
@@ -29,9 +29,9 @@ function App() {
   return (
     <div className="App">
       <h2>My tasks</h2>
-      <CategoryFilter categories={CATEGORIES} onSelectCategory={setSelectedCategory}/>
+      <CategoryFilter categories={CATEGORIES} selectedCategory={seletedCategory} onSelectCategory={setSelectedCategory}/>
       <NewTaskForm categories={CATEGORIES.slice(1)} onTaskFormSubmit={addNewTask}/>
-      <TaskList tasks={filteredTaskList} onDeleteClick={deleteTask}/>
+      <TaskList tasks={filteredTaskList} onDeleteTask={deleteTask}/>
     </div>
   );
 }
