@@ -1,7 +1,6 @@
 import React from "react";
 
 function CategoryFilter({categories, onSelectCategory}) {
-  //const [className, setClassName] = useState("")
   function handleCategoryFilter(e){
     const siblings = e.target.parentElement.children
     Array.from(siblings).forEach(sibling=>{
